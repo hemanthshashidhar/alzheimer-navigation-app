@@ -16,7 +16,8 @@ dependencies:
   latlong2: ^0.9.1
   geolocator: ^11.0.1
   permission_handler: ^11.0.1
-  http: ^1.1.0  # Add this for API calls
+  http: ^1.1.0
+  # Remove image_picker for now
 
 dev_dependencies:
   flutter_test:
