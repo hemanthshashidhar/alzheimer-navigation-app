@@ -228,6 +228,15 @@ class _PatientDashboardState extends State<PatientDashboard> {
     );
   }
 
+  void _openARNavigation() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const ARNavigationScreen(),
+      ),
+    );
+  }
+
   Color _getRelationshipColor(String relationship) {
     switch (relationship.toLowerCase()) {
       case 'daughter':
