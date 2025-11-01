@@ -45,5 +45,9 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Camera needed for AR navigation</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Location needed for accurate navigation</string>
 </dict>
 </plist>
