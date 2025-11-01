@@ -10,6 +10,7 @@ import 'profile_screen.dart';
 import 'reminders_screen.dart';
 import 'full_screen_map.dart';
 import 'people_screen.dart';
+import 'ar_navigation_screen.dart';
 
 class PatientDashboard extends StatefulWidget {
   const PatientDashboard({super.key});
