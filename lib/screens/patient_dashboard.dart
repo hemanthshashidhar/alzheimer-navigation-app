@@ -533,44 +533,71 @@ class _PatientDashboardState extends State<PatientDashboard> {
             // Action Buttons
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Row(
+              child: Column(
                 children: [
-                  Expanded(
-                    child: ElevatedButton.icon(
-                      onPressed: _isLoadingRoute ? null : _navigateHome,
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: _isLoadingRoute ? Colors.grey : AppConstants.primaryColor,
-                        foregroundColor: Colors.white,
-                        padding: const EdgeInsets.symmetric(vertical: 16),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: ElevatedButton.icon(
+                          onPressed: _isLoadingRoute ? null : _navigateHome,
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: _isLoadingRoute ? Colors.grey : AppConstants.primaryColor,
+                            foregroundColor: Colors.white,
+                            padding: const EdgeInsets.symmetric(vertical: 16),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                          ),
+                          icon: const Icon(Icons.directions, size: 20),
+                          label: Text(
+                            _isLoadingRoute ? 'Calculating...' : 'Navigate Home',
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 16,
+                            ),
+                          ),
                         ),
                       ),
-                      icon: const Icon(Icons.directions, size: 20),
-                      label: Text(
-                        _isLoadingRoute ? 'Calculating...' : 'Navigate Home',
-                        style: const TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 16,
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: ElevatedButton.icon(
+                          onPressed: _onSOSPressed,
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: AppConstants.dangerColor,
+                            foregroundColor: Colors.white,
+                            padding: const EdgeInsets.symmetric(vertical: 16),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                          ),
+                          icon: const Icon(Icons.warning, size: 20),
+                          label: const Text(
+                            'SOS Emergency',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 16,
+                            ),
+                          ),
                         ),
                       ),
-                    ),
+                    ],
                   ),
-                  const SizedBox(width: 12),
-                  Expanded(
+                  const SizedBox(height: 12),
+                  SizedBox(
+                    width: double.infinity,
                     child: ElevatedButton.icon(
-                      onPressed: _onSOSPressed,
+                      onPressed: _openARNavigation,
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: AppConstants.dangerColor,
+                        backgroundColor: AppConstants.secondaryColor,
                         foregroundColor: Colors.white,
                         padding: const EdgeInsets.symmetric(vertical: 16),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
                       ),
-                      icon: const Icon(Icons.warning, size: 20),
+                      icon: const Icon(Icons.view_in_ar, size: 20),
                       label: const Text(
-                        'SOS Emergency',
+                        'AR Navigation',
                         style: TextStyle(
                           fontWeight: FontWeight.w600,
                           fontSize: 16,
